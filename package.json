@@ -1,27 +1,30 @@
 {
-  "name": "cnrad-dev",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@types/styled-components": "^5.1.14",
-    "framer-motion": "^4.1.17",
-    "next": "11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "styled-components": "^5.3.1",
-    "swr": "^1.0.1",
-    "use-lanyard": "^1.0.1"
-  },
-  "devDependencies": {
-    "@types/react": "17.0.20",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
-    "typescript": "4.4.2"
-  }
+    "name": "cnrad-dev",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+        "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+        "start": "NODE_OPTIONS=--openssl-legacy-provider next start",
+        "lint": "NODE_OPTIONS=--openssl-legacy-provider next lint"
+    },
+    "dependencies": {
+        "@types/styled-components": "^5.1.14",
+        "framer-motion": "^4.1.17",
+        "next": "11.1.3",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "styled-components": "^5.3.1",
+        "swr": "^1.0.1",
+        "use-lanyard": "^1.0.1"
+    },
+    "devDependencies": {
+        "@types/react": "17.0.20",
+        "eslint": "7.32.0",
+        "eslint-config-next": "11.1.2",
+        "typescript": "4.4.2"
+    },
+    "volta": {
+        "node": "18.12.0"
+    }
 }
