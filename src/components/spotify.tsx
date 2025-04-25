@@ -19,7 +19,7 @@ export function Spotify() {
         >
             <ListeningTo>Listening to Spotify</ListeningTo>
             <SpotifyCont>
-                <AlbumImg src={user.spotify.album_art_url} />
+                <AlbumImg src={user.spotify.album_art_url ?? undefined} />
                 <SpotifyIcon src="/assets/spotify-logo.svg" />
                 <TextCont>
                     <SongTitle href={`https://open.spotify.com/track/${user.spotify.track_id}`} target="_blank">
