@@ -93,10 +93,10 @@ const App = () => {
                 <meta name="theme-color" content="#000000" />
                 <meta
                     name="keywords"
-                    content="cnrad, Leander Crawford, Leander, Crawford, web developer, github, typescript"
+                    content="cnrad, Leander Schlichting, Leander, Schlichting, web developer, github, typescript"
                 />
-                <meta name="description" content="Leander Crawford - Full-stack TypeScript Developer." />
-                <meta name="author" content="Leander Crawford" />
+                <meta name="description" content="Leander Schlichting - Full-stack TypeScript Developer." />
+                <meta name="author" content="Leander Schlichting" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
                 <link rel="manifest" href="/manifest.json" />
                 <noscript>
@@ -112,7 +112,7 @@ const App = () => {
             />
             <Wrapper>
                 <Container initial="init" animate="load" variants={containerAnim}>
-                    <Header variants={childAnim}>Leander Crawford</Header>
+                    <Header variants={childAnim}>Leander Schlichting</Header>
                     <Bio variants={childAnim}>
                         Fullstack web{" "}
                         <DevLink color="#949eb3" href="https://github.com/cnrad">
