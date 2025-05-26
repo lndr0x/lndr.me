@@ -125,17 +125,17 @@ const App = () => {
                         {time}
                     </Time>
                     <Contact initial="init" animate="load" variants={linkAnimParent}>
-                        <To variants={linkAnim} color="#ccc" target="_blank" href="mailto:hello@cnrad.dev">
+                        <To variants={linkAnim} color="#ccc" target="_blank" href="mailto:email@leanderschlichting.org">
                             <Icons.MailIcon />
                         </To>
-                        <To variants={linkAnim} color="#ccc" target="_blank" href="https://twitter.com/notcnrad">
+                        <To variants={linkAnim} color="#ccc" target="_blank" href="https://rickroll.com">
                             <Icons.TwitterIcon />
                         </To>
-                        <To variants={linkAnim} color="#ccc" target="_blank" href="https://github.com/cnrad">
+                        <To variants={linkAnim} color="#ccc" target="_blank" href="https://github.com/lndr0x">
                             <Icons.GitHubIcon />
                         </To>
-                        <To variants={linkAnim} color="#ccc" target="_blank" href="https://linkedin.com/in/cnrad">
-                            <Icons.LinkedinLogo />
+                        <To variants={linkAnim} color="#ccc" target="_blank" href="https://rickroll.com">
+                            <Icons.SpotifyLogo />
                         </To>
 
                         {/*<To variants={linkAnim} color="#ccc" target="_blank" href="https://poly.work/cnrad">
