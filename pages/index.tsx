@@ -114,8 +114,8 @@ const App = () => {
                 <Container initial="init" animate="load" variants={containerAnim}>
                     <Header variants={childAnim}>Leander Schlichting</Header>
                     <Bio variants={childAnim}>
-                        Fullstack web{" "}
-                        <DevLink color="#949eb3" href="https://github.com/cnrad">
+                        Python discord app{" "}
+                        <DevLink color="#949eb3" href="https://github.com/lndr0x">
                             developer
                         </DevLink>
                         .
