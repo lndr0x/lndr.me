@@ -135,7 +135,7 @@ const App = () => {
                             <Icons.GitHubIcon />
                         </To>
                         <To variants={linkAnim} color="#ccc" target="_blank" href="https://rickroll.com">
-                            <Icons.SpotifyLogo />
+                            <Icons.LinkedinLogo />
                         </To>
 
                         {/*<To variants={linkAnim} color="#ccc" target="_blank" href="https://poly.work/cnrad">
