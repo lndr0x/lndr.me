@@ -114,7 +114,7 @@ const App = () => {
                 <Container initial="init" animate="load" variants={containerAnim}>
                     <Header variants={childAnim}>Leander Schlichting</Header>
                     <Bio variants={childAnim}>
-                        Python discord app{" "}
+                        Python{" "}
                         <DevLink color="#949eb3" href="https://github.com/lndr0x">
                             developer
                         </DevLink>
