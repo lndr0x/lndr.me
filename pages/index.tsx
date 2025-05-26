@@ -78,10 +78,18 @@ const App = () => {
     }, []);
 
     function updateTime() {
-        let current = new Date().toLocaleString("en-US", { timeZone: "Europe/Berlin" });
-        setTime(current.toLowerCase().slice(-11, -1) + ".m.");
-        setTimeout(updateTime, 1000);
-    }
+    const options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZone: "Europe/Berlin"
+    };
+    
+    let current = new Date().toLocaleTimeString('de-DE', options);
+    setTime(current);
+    setTimeout(updateTime, 1000);
+}
 
     return (
         <>
@@ -270,7 +278,6 @@ const Time = styled(motion.div)`
         margin-right: 15px;
     }
 `;
-
 const Contact = styled(motion.div)`
     display: flex;
     flex-direction: row;
