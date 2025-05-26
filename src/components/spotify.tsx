@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function Spotify() {
     //code inspired by alistair @ github.com/alii, design inspired by phineas @ github.com/Phineas
 
-    const { data: user } = useLanyard("705665813994012695");
+    const { data: user } = useLanyard("1159863525561356379");
 
     if (!user || !user.spotify) {
         return <></>;
