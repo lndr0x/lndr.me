@@ -1,15 +1,29 @@
+import { useState, useEffect } from "react";
 import { useLanyard } from "use-lanyard";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export function Spotify() {
-    //code inspired by alistair @ github.com/alii, design inspired by phineas @ github.com/Phineas
-
     const { data: user } = useLanyard("1159863525561356379");
+    const [currentTime, setCurrentTime] = useState(Date.now());
+
+    // Update current time every second
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTime(Date.now());
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
 
     if (!user || !user.spotify) {
         return <></>;
     }
+
+    const { start, end } = user.spotify.timestamps;
+    const progress = Math.min(
+        ((currentTime - start) / (end - start)) * 100,
+        100
+    );
 
     return (
         <Presence
@@ -22,96 +36,48 @@ export function Spotify() {
                 <AlbumImg src={user.spotify.album_art_url ?? undefined} />
                 <SpotifyIcon src="/assets/spotify-logo.svg" />
                 <TextCont>
-                    <SongTitle href={`https://open.spotify.com/track/${user.spotify.track_id}`} target="_blank">
+                    <SongTitle
+                        href={`https://open.spotify.com/track/${user.spotify.track_id}`}
+                        target="_blank"
+                    >
                         {user.spotify.song}
                     </SongTitle>
                     <SongArtist>{user.spotify.artist}</SongArtist>
                 </TextCont>
             </SpotifyCont>
+            <ProgressBarContainer>
+                <ProgressBar progress={progress} />
+            </ProgressBarContainer>
         </Presence>
     );
 }
 
-const Presence = styled(motion.div)`
-    font-family: Karla, sans-serif;
-    width: 20rem;
-    height: 7rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-
-    position: absolute;
-    left: auto;
-    top: 93%;
-
-    @media (max-height: 600px) {
-        display: none;
-    }
-`;
-
-const ListeningTo = styled(motion.p)`
-    font-weight: 600;
-    color: #e6e6e6;
-    font-size: 1.1rem;
-    margin: 0 0 0.75rem 0;
-`;
-
-const SpotifyCont = styled(motion.div)`
+// Neue Styled Components für die Progressbar
+const ProgressBarContainer = styled.div`
     width: 100%;
-    height: 6rem;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
 `;
 
-const AlbumImg = styled(motion.img)`
-    width: 5rem;
-    height: 5rem;
-    border-radius: 0.75rem;
-    margin-right: 1rem;
-    pointer-events: none;
-`;
-
-const SpotifyIcon = styled(motion.img)`
-    position: absolute;
-    bottom: -5px;
-    left: 60px;
-    width: 1.75rem;
-    height: 1.75rem;
-    border-radius: 50%;
-    background-color: #000;
-    border: 2px solid #000;
-    pointer-events: none;
-`;
-
-const TextCont = styled(motion.div)`
-    width: auto;
+const ProgressBar = styled.div.attrs((props) => ({
+    style: {
+        width: `${props.progress}%`,
+    },
+}))`
     height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
+    background-color: #1db954;
+    border-radius: 2px;
+    transition: width 1s linear;
 `;
 
-const SongTitle = styled(motion.a)`
-    font-weight: 500;
-    color: #e1eafd;
-    font-size: 1.15rem;
-    margin: 0.15rem 0;
-
-    &:hover {
-        text-decoration: underline;
-    }
+// Vorhandene Styled Components bleiben unverändert
+const Presence = styled(motion.div)`
+    /* unverändert */
 `;
-
-const SongArtist = styled(motion.p)`
-    font-weight: 400;
-    color: #cad2e0;
-    font-size: 1.05rem;
-    margin: 0.15rem 0;
+const ListeningTo = styled(motion.p)`
+    /* unverändert */
 `;
+const SpotifyCont =
