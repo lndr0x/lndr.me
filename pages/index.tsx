@@ -78,7 +78,7 @@ const App = () => {
     }, []);
 
     function updateTime() {
-        let current = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
+        let current = new Date().toLocaleString("en-US", { timeZone: "Europe/Berlin" });
         setTime(current.toLowerCase().slice(-11, -1) + ".m.");
         setTimeout(updateTime, 1000);
     }
